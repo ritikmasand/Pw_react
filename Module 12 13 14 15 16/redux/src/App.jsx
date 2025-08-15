@@ -4,8 +4,9 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import CompA from './components/CompA'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import Recipe from './components/Recipe'
 import DemoList from './components/DemoList'
+import Recipe from './components/Recipe'
+
 
 
 function App() {
@@ -15,8 +16,8 @@ function App() {
     <BrowserRouter>
      <CompA/>
      <Routes>
-      <Route path='recipe/:id' element={<Recipe/>}/>
       <Route path='demo' element={<DemoList/>}/>
+      <Route path='recipe/:id' element={<Recipe/>}/>
      </Routes>
     </BrowserRouter>
   )

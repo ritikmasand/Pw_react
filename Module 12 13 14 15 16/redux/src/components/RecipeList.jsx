@@ -1,29 +1,26 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchRecipes } from "../features/recipes/recipesSlice";
-import { Link } from "react-router-dom";
+import { fetchRecipes } from "../redux/features/recipes/recipeSlice";
 
-function RecipesList() {
+function RecipeList() {
   const dispatch = useDispatch();
   const { list, status, error } = useSelector((state) => state.recipes);
 
-  useEffect(() => {
+  useDispatch(() => {
     if (status === "idle") {
-      dispatch(fetchRecipes());
+      dispatch(fetchRecipes);
     }
   }, [status, dispatch]);
-
-  if (status === "loading") return <p>Loading recipes...</p>;
-  if (status === "failed") return <p>Error: {error}</p>;
-
+  if (status === "loading") return <p> Loading Recipes.... </p>;
+  if (status === "failed") return <p> Error Loading recipes </p>;
   return (
-    <div style={{ padding: "1rem" }}>
+    <div>
       <h2>Recipes</h2>
       <ul>
         {list.map((recipe) => (
           <li key={recipe.id}>
             <Link to={`/recipe/${recipe.id}`}>
-              <img src={recipe.image} alt={recipe.name} width="150" />
+              <img src={recipe.image} width="150" />
               <p>{recipe.name}</p>
             </Link>
           </li>
@@ -33,4 +30,4 @@ function RecipesList() {
   );
 }
 
-export default RecipesList;
+export default RecipeList;
