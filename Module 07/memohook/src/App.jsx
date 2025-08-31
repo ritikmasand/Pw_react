@@ -1,14 +1,14 @@
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
-import { useMemo } from "react";
 
 function App() {
-  const [add, setAdd] = useState(0); 
+  const [add, setAdd] = useState(0);
   const [minus, setMinus] = useState(100);
+
   const multiply = useMemo(
-    function () {
+    function multiply() {
       console.log("Multiplication invoked");
       return add * 10;
     },
@@ -17,12 +17,14 @@ function App() {
 
   return (
     <>
-      <button onClick={() => setAdd(add + 1)}>Click to add: {add} </button>
+      <button onClick={() => setAdd(add + 1)}>Click to add: {add}</button>
       <br />
+      <hr />
       {multiply}
       <br />
+      <hr />
       <button onClick={() => setMinus(minus - 1)}>
-        Click to subtract{minus}
+        Click to substract: {minus}
       </button>
     </>
   );

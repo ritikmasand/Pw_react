@@ -1,0 +1,43 @@
+@import "tailwindcss";
+
+/* @custom-variant dark (&:where(.dark, .dark *));
+
+@custom-variant pastel (&:where(.pastel, .pastel *)); */
+
+@theme {
+  --color-primary: #1e90ff;
+  --color-secondary: #964b00;
+  /* --font-crazyFont: "Roboto Condensed";
+  --font-display: "Satoshi", "sans-serif";
+  --color-wall-300: #edcabe; */
+  /* --color-balcony-400: #c19770;
+  --color-avocado-400: oklch(0.92 0.19 114.08); */
+  --color-bg: #f8fffc;
+  --color-text: #1a1a1a;
+}
+
+.btn {
+  @apply px-4 py-2 rounded bg-blue-500 hover:bg-blue-900 cursor-pointer mt-4;
+  /* background-color: --alpha(var(--color-primary) / 50%); */
+}
+/* .btn2 {
+  @apply px-4 py-2 rounded bg-blue-500 hover:bg-blue-900 cursor-pointer mt-4;
+} */
+.card {
+  /* @apply flex gap-2 bg-pink-200 m-4 p-4 rounded; */
+
+  @apply rounded;
+  background-color: var(--color-bg);
+  color: var(color-text);
+}
+
+.dark {
+  --color-bg: #1a1a1a;
+  --color-text: #f8fffc;
+}
+.pastel {
+  --color-bg: #fb64b7;
+  --color-text: #373131;
+  --color-primary: #cb88c7;
+  --color-secondary: #dae41a;
+}
