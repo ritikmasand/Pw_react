@@ -13,6 +13,8 @@ import Dark from "./components/Dark";
 import Theme from "./components/Theme";
 import Apply from "./components/Apply";
 import ExpenseTracker from "./components/ExpenseTracker";
+import Transitions from "./components/Transitions";
+import Utility from "./components/Utility";
 
 
 function App() {
@@ -33,7 +35,9 @@ function App() {
       {/* <Dark/> */}
       {/* <Theme /> */}
       {/* <Apply /> */}
-    <ExpenseTracker/>
+      {/* <Transitions/> */}
+      <Utility/>
+    {/* <ExpenseTracker/> */}
     </>
   );
 }

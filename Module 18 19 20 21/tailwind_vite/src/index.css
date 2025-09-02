@@ -41,3 +41,22 @@
   --color-primary: #cb88c7;
   --color-secondary: #dae41a;
 }
+
+@utility ritik {
+  background-color: red;
+  padding: 4px;
+  border: 2px solid black;
+}
+@utility btn-4 {
+  background-color: blue;
+  padding: 8px;
+  border: none;
+  color: white;
+  display: block;
+}
+
+@utility spn {
+  background-color: brown;
+  padding: 6px;
+  border: 2px solid yellow;
+}
